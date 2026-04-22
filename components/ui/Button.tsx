@@ -1,5 +1,5 @@
 
-const base = "px-6 py-2 disabled:opacity-50 transition-all w-full cursor-pointer";
+const base = "px-6 py-4 disabled:opacity-50 transition-all w-full cursor-pointer";
 
 const variants = {
     primary: "bg-[#61FF52]",
