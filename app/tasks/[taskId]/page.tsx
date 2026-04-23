@@ -1,4 +1,6 @@
+import { Accordion, AccordionItem } from "@/components/ui/Accordion"
 import { Button } from "@/components/ui/Button"
+import { ChevronDown } from "lucide-react"
 import Link from "next/link"
 
 export default async function Page({
@@ -26,9 +28,11 @@ export default async function Page({
                     <div className="flex text-[32px]"><div>30</div>/30 Шт</div>
                     <div className="text-[24px] rounded-full border border-gray-500 w-[36px] h-[36px] flex justify-center items-center">+</div>
                 </div>
-                <div className="flex items-center">
-                    Більше ⌵
-                </div>
+                <Accordion className="flex items-center">
+                    <AccordionItem value="1" trigger="Більше">
+                        Hello world
+                    </AccordionItem>
+                </Accordion>
             </div>
             <div className="flex flex-col gap-4">
                 <Button>Завершити завдання</Button>
