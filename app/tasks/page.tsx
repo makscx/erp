@@ -1,26 +1,8 @@
-import TaskItem, { type Status } from "./_components/TaskItem";
 
-const data: { id: number; name: string; count: number; status: Status }[] = [
-    {
-        id: 1,
-        name: "Набір \"Щенячий патруль хлопці\"",
-        count: 25,
-        status: "inProcess"
-    },
-    {
-        id: 2,
-        name: "Набір \"Бравл Старс\"",
-        count: 20,
-        status: "completed"
-    },
-    {
-        id: 3,
-        name: "Набір \"Майнкрафт\"",
-        count: 18,
-        status: "urgent"
-    },
+import Link from "next/link";
+import TaskItem from "../../components/ui/tasks/TaskItem";
+import { data } from "@/lib/mock/data";
 
-]
 
 export default function Tasks() {
     return (
@@ -34,7 +16,9 @@ export default function Tasks() {
                 </div>
                 <div>
                     {data.map((task) => (
-                        <TaskItem key={task.id} task={task} id={task.id} />
+                        <Link key={task.id} href={`/tasks/${task.id}`}>
+                            <TaskItem task={task} />
+                        </Link>
                     ))}
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import Room from "./_components/Room";
 import RoomGroup from "./_components/RoomGroup";
-export default function Home() {
+export default function Dashboard() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Floor plan */}

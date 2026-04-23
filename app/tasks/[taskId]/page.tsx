@@ -1,6 +1,5 @@
 import { Accordion, AccordionItem } from "@/components/ui/Accordion"
 import { Button } from "@/components/ui/Button"
-import { ChevronDown } from "lucide-react"
 import Link from "next/link"
 
 export default async function Page({

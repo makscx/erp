@@ -1,4 +1,4 @@
-import type { Worker as WorkerType } from "@/types";
+import type { Worker as WorkerType } from "@/types/worker";
 import Worker from "./Worker";
 
 export default function Room({
