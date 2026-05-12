@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 // import { createTask } from "@/app/api/task";
 
-function TaskForm({ setIsSuccess, onClose }: { setIsSuccess: (value: boolean) => void; onClose: () => void }) {
+function TaskForm({ setIsSuccess }: { setIsSuccess: (value: boolean) => void }) {
 
     const { register, handleSubmit, formState: { errors } } = useForm<TaskFormValues>({
         resolver: zodResolver(taskSchema),
@@ -17,10 +17,6 @@ function TaskForm({ setIsSuccess, onClose }: { setIsSuccess: (value: boolean) =>
         console.log("FORM DATA:", data);
 
         setIsSuccess(true);
-
-        // setTimeout(() => {
-        //     onClose(); 
-        // }, 1200);
     };
 
     return (

@@ -8,22 +8,43 @@ export class TasksService {
   constructor(private readonly prisma: PrismaService) { }
 
   create(createTaskDto: CreateTaskDto) {
-    return 'This action adds a new task';
+    return this.prisma.task.create({ data: createTaskDto })
   }
 
   async findAll() {
     return this.prisma.task.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} task`;
+  findOne(id: string) {
+    return this.prisma.task.findFirst({
+      where: {
+        id
+      }
+    })
   }
 
-  update(id: number, updateTaskDto: UpdateTaskDto) {
-    return `This action updates a #${id} task`;
+  async findByUserId(id: string) {
+    return this.prisma.task.findMany({
+      where: {
+        userId: id
+      }
+    })
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} task`;
+  update(id: string, updateTaskDto: UpdateTaskDto) {
+    return this.prisma.task.update({
+      where: {
+        id
+      },
+      data: updateTaskDto
+    })
+  }
+
+  remove(id: string) {
+    return this.prisma.task.delete({
+      where: {
+        id
+      }
+    })
   }
 }

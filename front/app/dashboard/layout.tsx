@@ -4,12 +4,15 @@ const tabs = ["Робітники", "Сушка", "Склад", "Налашту�
 
 export default function DashboardLayout({
   children,
+  modal
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <div>
       <Navigation tabs={tabs} />
+      {modal}
       {children}
     </div >
   );
