@@ -1,10 +1,10 @@
 import type { Worker } from "@/types/worker";
 import Link from "next/link";
 
-export default function Worker({ worker }: { worker: Worker }) {
+export default function WorkerCard({ worker }: { worker: Worker }) {
     return (
         <>
-            <Link href={`/dashboard?worker=${worker.name}&tasks=${worker.id}`}>
+            <Link href={`/dashboard?tasks=${worker.id}`}>
                 <div
                     className="absolute top-0 left-0 border border-gray-300
                            flex items-center justify-center cursor-pointer hover:bg-gray-50 p-[5px]"

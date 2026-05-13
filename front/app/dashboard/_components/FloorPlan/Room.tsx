@@ -1,5 +1,5 @@
 import type { Worker as WorkerType } from "@/types/worker";
-import Worker from "./Worker";
+import WorkerCard from "./WorkerCard";
 
 export default function Room({
     w, h, label, workers,
@@ -17,7 +17,7 @@ export default function Room({
             {workers && (
                 <>
                     {workers.map((worker) => (
-                        <Worker key={worker.id} worker={worker} />
+                        <WorkerCard key={worker.id} worker={worker} />
                     ))}
                 </>
             )}

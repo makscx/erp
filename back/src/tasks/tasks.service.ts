@@ -27,6 +27,9 @@ export class TasksService {
     return this.prisma.task.findMany({
       where: {
         userId: id
+      },
+      include: {
+        user: true
       }
     })
   }
